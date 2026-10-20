@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#120b20">
+<title>PTFS France — Halloween Edition</title>
+<style>
+:root{--bg:#100b1a;--panel:#1a1327;--panel2:#211731;--purple:#a855f7;--orange:#ff7b35;--green:#8ee06b;--red:#ff4568;--text:#f8f2ff;--muted:#b9aacb;--line:#ffffff18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at 10% 0%,#46205b66,transparent 42%),radial-gradient(ellipse at 95% 20%,#9d3d1b35,transparent 32%),var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:31px 31px;z-index:-1;animation:starDrift 24s linear infinite}
+@keyframes starDrift{from{background-position:0 0}to{background-position:124px 93px}}
+body:after{content:"";position:fixed;inset:auto -10% -35% -10%;height:55vh;pointer-events:none;z-index:-1;background:radial-gradient(ellipse,#8b35bb17,transparent 68%);filter:blur(25px)}
+.hero{isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 15%,#ff9b4b0b 50%,transparent 80%);background-size:220% 100%;animation:aurora 9s ease-in-out infinite}
+@keyframes aurora{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.locked-label{display:inline-flex;align-items:center;cursor:default;user-select:none}
+.card{backdrop-filter:blur(8px)}
+.status{user-select:none}
+
+a{color:inherit}.wrap{width:min(1180px,92%);margin:auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0}.brand{font-weight:950;letter-spacing:.08em;display:flex;align-items:center;gap:10px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--purple));box-shadow:0 0 30px #a855f755;font-size:23px}.pill{border:1px solid #ff9b4b55;border-radius:999px;padding:6px 11px;color:#ffc38e;background:#ff7b3512;font-size:12px;font-weight:800;letter-spacing:.08em}
+.hero{position:relative;overflow:hidden;padding:clamp(28px,6vw,70px);border:1px solid #ffffff20;border-radius:30px;background:linear-gradient(115deg,#21112eec,#160e22e8 60%,#35171eeb);box-shadow:0 25px 80px #0005}
+.hero:after{content:"🎃";position:absolute;font-size:clamp(100px,20vw,220px);right:4%;top:0;opacity:.15;transform:rotate(15deg);pointer-events:none}.eyebrow{color:#ffb176;font-size:12px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.hero h1{font-size:clamp(36px,7vw,76px);line-height:.98;letter-spacing:-.055em;margin:13px 0 18px;max-width:780px}.hero h1 span{color:transparent;background:linear-gradient(90deg,#ffb05f,#f45c7c,#c084fc);background-clip:text}.hero p{color:#d4c7e2;max-width:640px;font-size:17px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:850;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.primary{background:linear-gradient(100deg,#ff8b45,#f05d7d);color:#1b0c1c;box-shadow:0 8px 25px #f05d7d2c}.secondary{color:#f7eaff;background:#ffffff0d;border:1px solid #ffffff25}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 36px}.stat{padding:17px;border:1px solid var(--line);border-radius:17px;background:#ffffff08}.stat strong{display:block;font-size:27px;line-height:1.1}.stat span{color:var(--muted);font-size:12px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:22px 0}.search{flex:1;min-width:210px;position:relative}.search input,.filter select{width:100%;padding:13px 15px;border:1px solid #ffffff20;border-radius:13px;color:var(--text);background:#1b1427;outline:none;font:inherit}.search input:focus,.filter select:focus{border-color:#c084fc;box-shadow:0 0 0 3px #a855f722}.filter{min-width:175px}.filter select option{background:#1b1427}.legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:10px 0 20px}.legend span{display:flex;align-items:center;gap:7px}.dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 10px #8ee06b55}.cross{color:var(--red);font-weight:1000;font-size:17px;line-height:1}
+.section{margin:38px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.section-head h2{margin:0;font-size:22px;letter-spacing:-.03em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.count{font-size:12px;color:#d6b5ff;background:#a855f71a;border:1px solid #a855f744;padding:5px 9px;border-radius:999px;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{position:relative;overflow:hidden;padding:17px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#ffffff0a,#ffffff04);transition:.22s}.card:hover{transform:translateY(-3px);border-color:#c084fc66;background:#ffffff0d}.card:before{content:"";position:absolute;width:80px;height:80px;right:-40px;top:-40px;background:#a855f71b;border-radius:50%}.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.card h3{margin:0;font-size:15px;font-weight:800}.status{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:900;letter-spacing:.04em;padding:5px 8px;border-radius:999px;white-space:nowrap}.status.available{color:#baf9a4;background:#8ee06b18;border:1px solid #8ee06b38}.status.taken{color:#ff9aaa;background:#ff456818;border:1px solid #ff456838}.card small{display:block;color:var(--muted);margin-top:9px;font-size:11px}.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:15px;padding-top:11px;border-top:1px solid var(--line)}.toggle{border:1px solid #ffffff25;background:#ffffff08;color:#eee1ff;border-radius:9px;padding:6px 9px;font-size:11px;font-weight:800;cursor:pointer}.toggle:hover{border-color:#c084fc}.empty{display:none;text-align:center;padding:30px;color:var(--muted);border:1px dashed #ffffff30;border-radius:16px}.note{padding:16px;border:1px solid #ff9b4b30;border-radius:16px;background:#ff7b350c;color:#e8d5c8;font-size:13px}.footer{padding:35px 0 45px;text-align:center;color:#897b9c;font-size:12px}.footer b{color:#d9b6ff}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,1fr)}.hero:after{right:-30px;top:20px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.topbar{align-items:flex-start}.pill{font-size:10px}.hero{border-radius:22px}.section-head{align-items:flex-start}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">🎃</div><div>PTFS <span style="color:#c084fc">FRANCE</span><div style="font-size:10px;color:#aa9bbd;letter-spacing:.2em">AIRLINE CONTROL CENTER</div></div></div>
+  <div class="pill">☠ HALLOWEEN EDITION · 2026</div>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">✦ La nuit des avions fantômes ✦</div>
+  <h1>LE CIEL N'ATTEND <span>PERSONNE.</span></h1>
+  <p>Le tableau de contrôle officiel des compagnies, services et postes spéciaux de PTFS France. Repère les places libres, recherche une entreprise et prends ton prochain poste.</p>
+  <div class="hero-actions"><button class="btn primary" onclick="document.querySelector('#catalogue').scrollIntoView({behavior:'smooth'})">✈ Explorer les disponibilités</button><span class="btn secondary locked-label">🔒 STATUTS VERROUILLÉS</span></div>
+</section>
+<div class="stats">
+  <div class="stat"><strong id="total">0</strong><span>ENTITÉS AU TABLEAU</span></div>
+  <div class="stat"><strong id="free" style="color:var(--green)">0</strong><span>DISPONIBLES</span></div>
+  <div class="stat"><strong id="taken" style="color:var(--red)">0</strong><span>DÉJÀ OCCUPÉES</span></div>
+  <div class="stat"><strong id="ratio">0%</strong><span>PLACES LIBRES</span></div>
+</div>
+<div id="catalogue">
+  <div class="toolbar">
+    <div class="search"><input id="search" type="search" placeholder="🔎 Rechercher une compagnie, un service…" aria-label="Rechercher" /></div>
+    <div class="filter"><select id="statusFilter" aria-label="Filtrer par statut"><option value="all">Tous les statuts</option><option value="available">🟢 Disponibles</option><option value="taken">❌ Occupées</option></select></div>
+    <div class="filter"><select id="categoryFilter" aria-label="Filtrer par catégorie"><option value="all">Toutes les catégories</option></select></div>
+  </div>
+  <div class="legend"><span><i class="dot"></i> Disponible à prendre</span><span><b class="cross">✕</b> Occupé</span><span>🔒 Statuts fixes — consultation uniquement</span></div>
+  <div id="sections"></div>
+  <div id="empty" class="empty">👻 Aucun résultat dans les brumes… Essaie une autre recherche.</div>
+</div>
+<div class="note">🕯️ <b>Mode consultation :</b> les statuts reprennent la légende de tes captures et sont gelés. Aucun bouton ne permet de modifier les disponibilités depuis le site.</div>
+</main>
+<footer class="footer">✦ <b>PTFS FRANCE</b> · HALLOWEEN EDITION ✦<br>Fait pour les passionnés d'aviation et les nuits mystérieuses.</footer>
+</div>
+<script>
+const groups = [
+ {name:"Compagnies aériennes",icon:"✈️",items:[
+ ["Aer Lingus",1],["Aer Lingus Regional",1],["Aeroflot",1],["Air Canada",0],["Air France",0],["Air New Zealand",1],["AirBaltic",1],["American Airlines",1],["Azul",1],["Azul Conecta",1],["British Airways",0],["Cathay Pacific",1],["Cebu Pacific",1],["Condor",1],["Chalair Aviation",0],["Delta",1],["EasyJet",1],["Emirates",0],["Flybe",1],["Iberia",0],["Jet2",1],["JetBlue",1],["KLM",0],["Korean Air",0],["LOT",1],["Lufthansa",0],["Pan Am",1],["Qantas",0],["Qatar Airways",0],["Ryanair",0],["Scandinavian",0],["St-Barrh Communauter",0],["Airlines",1],["Singapore Airlines",1],["Southwest",1],["Swiss Airlines",1],["Thai Airways",1],["Thomas Cook",1],["TUI",1],["Turkish Airlines",1],["United Airlines",1],["Wizz Air",1],["Yeti Airlines",1],["All Nippon Airways",0,"Dernier avertissement"]
+ ]},
+ {name:"Cargo",icon:"📦",items:[["DHL",0],["FedEx",0],["UPS",1]]},
+ {name:"Entreprises — réparation",icon:"🔧",items:[["StarRepair",0],["OneWorld Facilities",0]]},
+ {name:"Entreprises — ground crew",icon:"🚜",items:[["SwissPort",0],["Ana Ground CREW",0]]},
+ {name:"Aviation spéciale",icon:"🛩️",items:[["VIP",0,"Modifié"]]}
+];
+const allItems=()=>groups.flatMap(g=>g.items.map(it=>({name:it[0],available:!!it[1],note:it[2]||"",group:g.name,icon:g.icon})));
+function updateStats(){
+ const a=allItems(),free=a.filter(x=>x.available).length,taken=a.length-free;
+ document.querySelector("#total").textContent=a.length;
+ document.querySelector("#free").textContent=free;
+ document.querySelector("#taken").textContent=taken;
+ document.querySelector("#ratio").textContent=Math.round(free/a.length*100)+"%";
+}
+function render(){
+ const term=document.querySelector("#search").value.trim().toLocaleLowerCase("fr");
+ const sf=document.querySelector("#statusFilter").value,cf=document.querySelector("#categoryFilter").value;
+ const root=document.querySelector("#sections");root.innerHTML="";let visible=0;
+ groups.forEach(g=>{
+  if(cf!=="all"&&cf!==g.name)return;
+  const matches=g.items.map(it=>({it,available:!!it[1]})).filter(x=>(!term||x.it[0].toLocaleLowerCase("fr").includes(term)||g.name.toLocaleLowerCase("fr").includes(term))&&(sf==="all"||(sf==="available"&&x.available)||(sf==="taken"&&!x.available)));
+  if(!matches.length)return;visible+=matches.length;
+  const sec=document.createElement("section");sec.className="section";
+  const head=document.createElement("div");head.className="section-head";
+  const title=document.createElement("div");const h=document.createElement("h2");h.textContent=g.icon+" "+g.name;const p=document.createElement("p");p.textContent="Registre officiel des postes — lecture seule";title.append(h,p);
+  const count=document.createElement("span");count.className="count";count.textContent=matches.filter(x=>x.available).length+" / "+matches.length+" libres";head.append(title,count);sec.append(head);
+  const grid=document.createElement("div");grid.className="grid";
+  matches.forEach(({it,available})=>{
+   const card=document.createElement("article");card.className="card";
+   const top=document.createElement("div");top.className="card-top";
+   const h3=document.createElement("h3");h3.textContent=it[0];
+   const badge=document.createElement("span");badge.className="status "+(available?"available":"taken");badge.textContent=available?"● DISPONIBLE":"✕ OCCUPÉ";
+   top.append(h3,badge);card.append(top);
+   if(it[2]){const sm=document.createElement("small");sm.textContent="⚠ "+it[2];card.append(sm)}
+   const foot=document.createElement("div");foot.className="card-footer";
+   const hint=document.createElement("small");hint.style.margin="0";hint.textContent=available?"Place disponible à prendre":"Place déjà occupée";
+   const lock=document.createElement("span");lock.className="toggle";lock.style.cursor="default";lock.style.opacity=".82";lock.textContent="🔒 VERROUILLÉ";
+   foot.append(hint,lock);card.append(foot);grid.append(card);
+  });
+  sec.append(grid);root.append(sec);
+ });
+ document.querySelector("#empty").style.display=visible?"none":"block";updateStats();
+}
+const category=document.querySelector("#categoryFilter");
+groups.forEach(g=>{const o=document.createElement("option");o.value=g.name;o.textContent=g.icon+" "+g.name;category.append(o)});
+document.querySelector("#search").addEventListener("input",render);
+document.querySelector("#statusFilter").addEventListener("change",render);
+category.addEventListener("change",render);
+render();
+</script>
+</body>
+</html>
